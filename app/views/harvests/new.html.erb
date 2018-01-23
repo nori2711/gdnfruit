@@ -1,0 +1,28 @@
+<div class="contents-login contents-login-harvest">
+  <h2>収穫イベントの新規登録</h2>
+
+  <%= form_for [@fruit, @harvest] do |h| %>
+    <div class="field", style="margin: 10px 0">
+      <%= h.label "収獲日時" %></br>
+      <%= h.text_field :harvest_day, placeholder: '収獲日時(YYYY/MM/DD HH:MM)', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px' %>
+    </div>
+    <div class="field", style="margin: 10px 0 30px 0">
+      <%= h.label "収獲人数" %></br>
+      <%= h.text_field :people_number, placeholder: '収獲人数', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px'  %>
+    </div>
+
+    <div class="actions">
+      <%= h.submit "収獲イベントを登録します", class: "btn btn--block" do %>
+      <% end %>
+    </div>
+  <% end %>
+</br>
+  <div class="harvest-d" style="font-size: 13px;">
+    <%= image_tag @fruit.photo(:thumb), alt: 'No image' %>
+    <table style="display: inline-block;">
+      <tr><th>果実名</th><td><%= @fruit.fruit_name %></td></tr>
+      <tr><th>収獲時期</th><td><%= @fruit.harvest_season %></td></tr>
+      <tr><th>収獲人数</th><td><%= @fruit.harvest_people %></td></tr>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="contents-login contents-login-fruit">
+<h2>庭の果実の新規登録</h2>
+
+<%= form_for(@fruit) do |f| %>
+<div class="field">
+  <%= f.text_field :fruit_name, placeholder: '果実名', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px;margin: 10px' %>
+</div>
+<div class="field">
+  <%= f.text_field :fruit_address1, placeholder: '果実所在地(郵便番号)', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px;margin: 10px' %>
+</div>
+<div class="field">
+  <%= f.text_field :fruit_address2, placeholder: '果実所在地(都道府県)', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px;margin: 0px' %>
+</div>
+<div class="field">
+  <%= f.text_area :fruit_address3, placeholder: '果実所在地(市区町村、番地、建物名など)', style: 'width: 250px;height: 70px;font-size: 15px;padding: 0 10px;margin: 10px' %>
+</div>
+<div class="field">
+  <%= f.text_area :fruit_detail, placeholder: '果実詳細', style: 'width: 250px;height: 50px;font-size: 15px;padding: 0 10px;margin: 0px' %>
+</div>
+<div class="field">
+  <%= f.text_field :harvest_season, placeholder: '収獲時期(例:12月頃、7月〜8月など)', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px;margin: 0px' %>
+</div>
+<div class="field">
+  <%= f.text_field :harvest_people, placeholder: '収獲人数(例:3〜5人など)', style: 'width: 250px;height: 30px;font-size: 15px;padding: 0 10px;margin: 10px' %>
+</div>
+<div class="field">
+  <%= f.label "果実の写真" %></br>
+  <%= f.file_field :photo, style: 'width: 250px;height: 30px;font-size: 15px;padding: 0;margin: 0 0 15px 0' %>
+</div>
+
+<div class="actions">
+  <%= f.submit "果実を登録します", class: "btn btn--block" do %>
+  <% end %>
+</div>
+<% end %>
+</div>

@@ -1,0 +1,63 @@
+<header>
+  <h3><%= @nickname %>さんのマイページ</h3>
+</header>
+
+<table class="user_table">
+  <caption><%= @nickname %>さんのユーザー登録情報</caption>
+  <tr><th>ユーザーID</th><td><%= current_user.id %></td></tr>
+  <tr><th>氏名</th><td><%= current_user.name %></td></tr>
+  <tr><th>郵便番号</th><td><%= current_user.address1 %>(<%= @address %>)</td></tr>
+  <tr><th>ニックネーム</th><td><%= current_user.nickname %></td></tr>
+  <tr><th>email</th><td><%= current_user.email %></td></tr>
+</table>
+
+<div class="tab-menu">
+  <ul>
+    <li id="left" class="selected">庭木情報</li>
+    <li id="right">参加情報</li>
+  </ul>
+
+  <div class="contents">
+    <div class="left">
+      <p><%= @nickname %>さんの庭の果実一覧<a class="fruit_new" href="/fruits/new">果実登録</a></p>
+      <% @fruits.each do |fruit| %>
+        <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
+          <%= link_to '詳細', "/fruits/#{fruit.id}", method: :get %> <%= link_to '収獲登録', "/fruits/#{fruit.id}/harvests/new", method: :get %> <%= fruit.fruit_name %>
+        </p>
+      <% end %>
+      </br>
+
+      <p><%= @nickname %>さん主催の収穫イベント一覧</p>
+      <% @harvests.each do |harvest| %>
+        <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
+          <%= link_to '参加者', "/harvests/#{harvest.id}/members", method: :get %> (<%= harvest.members_count %>/<%= harvest.people_number %>) <%= formatted_datetime(harvest.harvest_day) %> <%= harvest.fruit.fruit_name %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="right">
+      <p><%= @nickname %>さんが参加する収穫一覧</p>
+      <% @members.each do |member| %>
+        <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
+          <%= link_to '投稿', "/harvests/#{member.harvest.id}/reviews/new", method: :get %> <%= formatted_datetime(member.harvest.harvest_day) %> <%= member.fruit.fruit_name %>
+        </p>
+      <% end %>
+      </br>
+
+      <p><%= @nickname %>さんのレビュー一覧</p>
+      <% @reviews.each do |review| %>
+        <p style="padding: 0;margin: 0;"><i class="star" data-score="<%= review.rate %>"></i> <%= formatted_datetime(review.harvest.harvest_day) %> <%= review.harvest.fruit.fruit_name %></p>
+        <p style="border-bottom: dotted 0.5px;padding: 0;margin: 0 0 5px 0;"><%= review.review %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.star').raty({
+    size :36,
+    starOff: '<%= asset_path('star-off.png') %>',
+    starOn: '<%= asset_path('star-on.png') %>',
+    readOnly: true
+  })
+</script>

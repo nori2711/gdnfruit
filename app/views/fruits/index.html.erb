@@ -1,0 +1,24 @@
+<div class="header-index">
+  <ul class="bxslider">
+    <li class="bs-img1" style="width: 100%; height: 320px"></li>
+    <li class="bs-img2" style="width: 100%; height: 320px"></li>
+    <li class="bs-img3" style="width: 100%; height: 320px"></li>
+    <li class="bs-img4" style="width: 100%; height: 320px"></li>
+  </ul>
+
+  <h1>Garden Fruits</h1>
+  <h2 class="title1">- 果実のなる庭木による地域コミュニティ活性化サイト -</h2>
+  <h2 class="title2">庭木の果実は、持ち主にとってはやっかいなものなこともありますが、持っていない人にとってはうらやましいものであったりします。Garden Fruitsは、庭木の果実の収獲イベントによる地域コミュニティの活性化を目的とするサイトです。</h2>
+</div>
+
+<% if user_signed_in? %>
+  <%= render partial: "fruit" %>
+<% else %>
+  <%= render partial: "lp" %>
+<% end %>
+
+<script>
+  $('.bxslider').bxSlider({
+    auto: true,
+  });
+</script>

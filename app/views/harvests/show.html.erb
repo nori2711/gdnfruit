@@ -1,0 +1,48 @@
+
+<div class="harvest-d">
+  <h3>収穫イベントの詳細</h3>
+  <%= link_to '収穫に参加する', "/harvests/#{@harvest.id}/members/new", method: :get %>
+  </br>
+  <%= image_tag @harvest.fruit.photo(:medium), alt: 'No image',size: '265' %>
+
+  <table>
+    <tr><th>登録者</th><td><%= @harvest.fruit.user.nickname %></td></tr>
+    <tr><th>果実名</th><td><%= @harvest.fruit.fruit_name %></td></tr>
+    <tr><th>住所</th><td><%= @address %></td></tr>
+    <tr><th>果実の詳細</th><td><%= @harvest.fruit.fruit_detail %></td></tr>
+    <tr><th>収穫日</th><td><%= formatted_datetime(@harvest.harvest_day) %></td></tr>
+    <tr><th>収穫人数</th><td><%= @harvest.people_number %></td></tr>
+  </table>
+
+
+</div>
+
+<div class="harvest-d-review">
+  <h3>・・みんなのレビュー・・</h3>
+  <ul>
+    <% @harvest.reviews.each do |review| %>
+    <li style="border-bottom: dotted 0.5px;list-style: none">
+      <div class="thumvnail__caption">
+        <h3 style="margin: 2px 0">
+          <%= review.user.nickname %><font size="2">・・収獲日<%= formatted_datetime(review.harvest.harvest_day) %></font>
+        </h3>
+        <div>
+          <i class="star" data-score="<%= review.rate %>"></i>
+        </div>
+        <p style="margin: 2px 0">
+          <%= review.review %>
+        </p>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
+<script>
+  $('.star').raty({
+    size :36,
+    starOff: '<%= asset_path('star-off.png') %>',
+    starOn: '<%= asset_path('star-on.png') %>',
+    readOnly: true
+  })
+</script>

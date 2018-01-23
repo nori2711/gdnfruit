@@ -1,0 +1,50 @@
+<div class="harvest-d" style="margin: 0px 10px">
+  <h3>収穫イベントのレビュー投稿</h3>
+  <%= image_tag @harvest.fruit.photo(:medium), alt: 'No image', size: '150' %>
+
+  <table style="font-size: 12px">
+    <tr><th>登録者</th><td><%= @harvest.fruit.user.nickname %></td></tr>
+    <tr><th>果実名</th><td><%= @harvest.fruit.fruit_name %></td></tr>
+    <tr><th>住所</th><td><%= @harvest.fruit.fruit_address2 %><%= @harvest.fruit.fruit_address3 %></td></tr>
+    <tr><th>果実の詳細</th><td><%= @harvest.fruit.fruit_detail %></td></tr>
+    <tr><th>収穫日</th><td><%= formatted_datetime(@harvest.harvest_day) %></td></tr>
+  </table>
+</div>
+
+<div style="margin: 0 10px">
+  <p style="margin: 15px 0 0 0;">収穫参加者</p>
+  <% @harvest.members.each do |member| %>
+    <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0 10px;">
+      <%= member.user.nickname %>さん <%= member.user.email %>
+    </p>
+  <% end %>
+</div>
+
+<div class="review-new" style="margin: 0px 10px">
+  <%= form_for [@harvest, @review] do |f| %>
+    <div class="field" id="star" style="margin: 10px 0">
+      <%= f.label :評価 %>
+      <%= f.hidden_field :rate, id: :reviw_star %>
+    </div>
+    <div style="margin: 8px 0px">
+      <%= f.text_area :review, placeholder: 'レビュー書いてね', style: 'width: 95%;height: 150px;font-size: 15px;' %>
+    </div>
+    <div>
+      <div>
+        <%= button_tag type: "submit", class: "btn btn--block" do %>
+      投稿する
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script>
+  $('#star').raty({
+    size :36,
+    starOff: '<%= asset_path('star-off.png') %>',
+    starOn: '<%= asset_path('star-on.png') %>',
+    scoreName: 'review[rate]'
+  })
+</script>
+

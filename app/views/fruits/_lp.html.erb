@@ -1,0 +1,40 @@
+<div class="lp">
+  <div class="lp-outline">
+    <h2>「Garden Fruits」は簡単に庭木の果実の収獲イベントの開催や参加ができます</h2>
+    <p><b>まずはユーザー登録</b> →<%= link_to "新規登録", new_user_registration_path, class: 'post' %></p>
+    <p><b class="owner">庭木の持ち主</b></br>「今年も庭の果実の収穫しなきゃ」</br>→収獲イベントを開催できます</p>
+    <p><b class="guest">収獲したい方</b></br>「どこかの庭の果実の収獲したいな」</br>→収獲イベントに参加できます</p>
+    <p><b class="owner">庭木の持ち主</b>＆<b class="guest">収獲したい方</b></br>→みんなで集まって収獲しよう</p>
+  </div>
+
+  <div class="lp-user">
+    <h2><b class="owner">庭木の持ち主</b>は収獲イベントを開催できます</h2>
+    <p>まず、マイページにて庭木を登録します</p>
+    <p>次に、庭木ごとに収獲イベントを登録します</p>
+    <p>参加状況を確認し収獲イベントを開催します</p>
+  </div>
+
+  <div class="lp-harvest">
+    <h2><b class="guest">収獲したい方</b>は収獲イベントに参加できます</h2>
+    <p>トップページで庭木情報を検索します</p>
+    <p>収穫したい庭木情報の収獲イベントに参加登録します</p>
+    <p>収獲日に現地に集合して収獲します</p>
+  </div>
+
+  <div class="lp-fruit">
+    <h2>収獲イベントの紹介</h2>
+    <ul>
+      <% @harvests.limit(9).each do |harvest| %>
+        <li><%= image_tag harvest.fruit.photo(:medium), alt: 'No image',size: '270' %></br>
+          <%= harvest.fruit.fruit_name %></br>
+          <%= harvest.fruit.fruit_address2 %></br>
+          <%= harvest.fruit.fruit_detail %></br>
+          <%= formatted_datetime(harvest.harvest_day) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
+

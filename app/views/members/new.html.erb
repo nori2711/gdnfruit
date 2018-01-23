@@ -1,0 +1,19 @@
+<div class="member-join">
+  <%= form_for [@harvest, @member] do |h| %>
+    <div class="actions">
+      <%= h.submit "収穫イベントへの参加を登録します", class: "btn btn--block" do %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="harvest-d" style="font-size: 13px;">
+    <%= image_tag @harvest.fruit.photo(:thumb), alt: 'No image' %>
+    <table style="display: inline-block;">
+      <tr><th>果実名</th><td><%= @harvest.fruit.fruit_name %></td></tr>
+      <tr><th>住所</th><td><%= @harvest.fruit.fruit_address2 %></td></tr>
+      <tr><th>収穫日</th><td><%= formatted_datetime(@harvest.harvest_day) %></td></tr>
+    </table>
+  </div>
+</div>
+
+

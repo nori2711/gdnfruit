@@ -1,0 +1,8 @@
+<div style="margin: 0 10px">
+  <h3>収穫参加者一覧</h3>
+  <% @member.each do |member| %>
+    <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
+      <%= member.user.nickname %>さん <%= member.user.email %>
+    </p>
+  <% end %>
+</div>
