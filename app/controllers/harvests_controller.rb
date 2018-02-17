@@ -10,7 +10,7 @@ class HarvestsController < ApplicationController
   end
 
   def create
-    @harvest = Harvest.new(user_id: current_user.id, fruit_id: harvest_params[:fruit_id], harvest_day: harvest_params[:harvest_day], people_number: harvest_params[:people_number])
+    @harvest = Harvest.new(harvest_params)
     if @harvest.save
       flash[:notice] = "収穫イベントの登録が完了しました。"
       redirect_to "/users/show"
@@ -26,7 +26,7 @@ class HarvestsController < ApplicationController
 
   private
   def harvest_params
-    params.require(:harvest).permit(:harvest_day, :people_number).merge(fruit_id: params[:fruit_id])
+    params.require(:harvest).permit(:harvest_day, :people_number).merge(fruit_id: params[:fruit_id], user_id: current_user.id)
   end
 end
 
