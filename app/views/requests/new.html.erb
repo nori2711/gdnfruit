@@ -1,0 +1,18 @@
+<div class="member-join">
+  <%= form_for [@tree, @request] do |r| %>
+    <div class="actions">
+      <%= r.submit "収穫イベントのリクエストメールを送る", class: "btn btn--block" do %>
+      <% end %>
+    </div>
+    <div style="margin: 8px 0px">
+      <%= r.text_area :comment, placeholder: '収穫イベントの実施予定など', style: 'width: 95%;height: 150px;font-size: 15px;' %>
+    </div>
+  <% end %>
+
+  <div class="harvest-d" style="font-size: 13px;">
+    <table style="display: inline-block;">
+      <tr><th>果樹名</th><td><%= @tree.tree_name %></td></tr>
+      <tr><th>住所</th><td><%= @tree.tree_address2 %></td></tr>
+    </table>
+  </div>
+</div>
