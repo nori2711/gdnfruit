@@ -63,6 +63,15 @@ header {
       padding: 3px 3px;
     }
 
+    @media (max-width: 768px) {
+      a {
+        font-size: 12px;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        padding: 5px 3px;
+      }
+    }
+
     a:hover {
       background-color: #fff;
     }
@@ -143,7 +152,7 @@ header {
     position: absolute;
     top: 128px;
     width: 75%;
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     background-color: rgba(169,169,169,0.4);
     margin: auto;
@@ -153,6 +162,23 @@ header {
     right: 0;
     padding: 3px 20px;
     // min-width: 450px;
+  }
+
+  @media (max-width: 768px) {
+    .title2 {
+      position: absolute;
+      top: 128px;
+      width: 75%;
+      font-size: 14px;
+      color: #fff;
+      background-color: rgba(169,169,169,0.4);
+      margin: 10px auto;
+      top: 120;
+      bottom: 30;
+      left: 0;
+      right: 0;
+      padding: 3px 20px;
+    }
   }
 }
 
@@ -183,6 +209,8 @@ header {
 }
 
 .user_table {
+  color: #696969;
+
   th, td {
     padding: 4px 4px;
   }
@@ -195,6 +223,10 @@ header {
   tbody tr:nth-child(even) {
     background: #D9E5FF;
   }
+}
+
+.tab-menu {
+  color: #696969;
 }
 
 .left, .right {
@@ -242,8 +274,9 @@ header {
   }
 
   .lp-outline {
-    padding: 0 5px;
+    padding: 0 5px 30px 0;
     color: #696969;
+    vertical-align: top;
 
     a {
       font-size: 14px;
@@ -258,6 +291,15 @@ header {
       color: #fff;
       background-color: #6495ed;
     }
+
+    p {
+      margin: 20px 5px 5px 0px;
+      padding: 0 0 4px 0;
+      width: 290px;
+      height: 250px;
+      // background-color: #fff;
+      display: inline-block;
+    }
   }
 
   .lp-user {
@@ -268,10 +310,31 @@ header {
     background-size: cover;
     color: #fff;
 
-    h2, p {
+    h2 {
       background-color: rgba(169,169,169,0.4);
-      width: 95%;
+      width: 90%;
+      padding: 20px 10px 10px 10px;
       display: inline-block
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+      text-align: left;
+      }
+    }
+
+    p {
+      background-color: rgba(169,169,169,0.4);
+      width: 90%;
+      padding: 3px 10px;
+      line-height: 120%;
+      display: inline-block
+    }
+
+    @media (max-width: 768px) {
+      p {
+      text-align: left;
+      }
     }
   }
 
@@ -288,10 +351,16 @@ header {
       width: 95%;
       display: inline-block
     }
+    @media (max-width: 768px) {
+      h2, p {
+      text-align: left;
+      }
+    }
   }
 
   .lp-fruit {
     background-color: #dcdcdc;
+    color: #696969;
 
     h2 {
       margin: 0px 0px 0px 0px;
@@ -330,6 +399,7 @@ header {
 .harvest-li {
   text-align: center;
   font-size: 9px;
+  color: #696969;
 
   h2 {
     font-size: 25px;

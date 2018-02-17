@@ -1,9 +1,18 @@
 <div class="lp">
   <div class="lp-outline">
-    <h2>「Garden Fruits」は簡単に庭木の果実の収獲イベントの開催や参加ができます</h2>
-    <p><b class="owner">庭木の持ち主</b></br>「今年も庭の果実の収穫しなきゃ」</br>→<%= link_to '収獲イベントの開催はマイページから', "/users/show", method: :get %></p>
-    <p><b class="guest">収獲したい方</b></br>「どこかの庭の果実の収獲したいな」</br>→<%= link_to '収穫イベントの検索はこちら', "/harvests", method: :get %></p>
-    <p><b class="owner">庭木の持ち主</b>＆<b class="guest">収獲したい方</b></br>→みんなで集まって収獲しよう</p>
+    <h2>「Town Fruits」は簡単に果樹の収獲イベントの開催や参加ができます</h2>
+    <p>
+      <%= image_tag 'icon-tree.png',size: '170' %></br>
+      <b class="owner">果樹の持ち主</b></br>
+    「今年も庭の果樹の収穫しなきゃ」</br><%= link_to '収獲イベントの開催はマイページから', "/users/show", method: :get %></p>
+    <p>
+      <%= image_tag 'icon-harvest.png',size: '170' %></br>
+      <b class="guest">収獲したい方</b></br>「どこかの果樹の収獲したいな」</br><%= link_to '収穫イベントの検索はこちら', "/harvests", method: :get %>
+    </p>
+    <p>
+      <%= image_tag 'icon-trees.png',size: '170' %></br>
+      <b class="owner">街の果樹が気になる方</b></br>「あの果樹でみんなを集めたいな」</br><%= link_to '街の果樹の検索はこちら', "#", method: :get %>
+    </p>
   </div>
 
   <div class="lp-fruit">
