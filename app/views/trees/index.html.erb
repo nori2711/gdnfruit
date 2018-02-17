@@ -1,0 +1,21 @@
+<div class="harvest-li">
+  <h2>街の果樹の検索</h2>
+
+  <%= search_form_for @search do |f| %>
+    <div>
+      <%= f.text_field :tree_address2_cont, class: "form-control", placeholder: "市区町村など", style: 'width: 150px;height: 30px;font-size: 15px;padding: 0 10px;margin: 5px 1px' %>
+      <%= f.text_field :tree_name_cont, class: "form-control", placeholder: "果樹名など", style: 'width: 150px;height: 30px;font-size: 15px;padding: 0 10px;margin: 5px 1px' %>
+    </div>
+    <div class="action"><%= f.submit "検  索", class: "btn btn--block" do %><% end %></div>
+  <% end %>
+
+  <ul>
+    <% @result.each do |tree| %>
+      <li>
+        <%= tree.tree_type %></br>
+        <%= tree.tree_name %></br>
+        <%= tree.tree_address2 %></br>
+        <%= link_to '詳細', "#", method: :get %></li>
+    <% end %>
+  </ul>
+</div>

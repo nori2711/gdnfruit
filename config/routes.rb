@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :harvests, only: :show do
     resources :reviews, only: [:new, :create]
   end
+  resources :trees
 end
