@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   # has_many :harvests
   has_many :harvests, through: :members
   has_many :reviews
+  has_many :requests
 
   after_create :send_user_to_create
 
