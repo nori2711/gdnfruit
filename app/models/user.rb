@@ -10,11 +10,10 @@ class User < ActiveRecord::Base
   has_many :reviews
   has_many :requests
 
-  after_create :send_user_to_create
+  # after_create :send_user_to_create
 
-  def send_user_to_create
-    NotificationMailer.send_confirm_to_user(self).deliver
-  end
-
+  # def send_user_to_create
+  #   NotificationMailer.send_confirm_to_user(self).deliver
+  # end
 
 end

@@ -16,4 +16,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
 
+  resources :trees, only: :index do
+    resources :requests, only: [:new, :create]
+  end
+
 end

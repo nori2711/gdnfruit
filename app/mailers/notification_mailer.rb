@@ -1,11 +1,11 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "Garden Fruits運営事務局"
+  default from: "Town Fruits運営事務局"
 
-  def send_confirm_to_user(user)
-    @user = user
+  def send_confirm_to_request(request)
+    @request = request
     mail(
-      subject: "会員登録が完了しました",
-      to: @user.email
+      subject: "収穫イベントをリクエストします",
+      to: @request.tree.government.hall_email,
     ) do |format|
       format.text
     end
