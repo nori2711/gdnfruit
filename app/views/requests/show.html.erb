@@ -1,0 +1,33 @@
+<div class="dummy-mail">
+  <li style="border-bottom: dotted 0.5px;list-style: none">
+    ＜メール送信内容＞</br>
+  </li>
+  <li style="border-bottom: dotted 0.5px;list-style: none">
+    subject: 収穫イベントをリクエストします</br>
+    to: <%= @request.tree.government.hall_email %></br>
+  </li>
+  <li style="border-bottom: dotted 0.5px;list-style: none">
+    <%= @request.tree.government.hall %> 御中</br>
+    </br>
+    Town Fruitsのユーザーから、以下の街の果樹の収穫イベントの開催のリクエストがありました。</br>
+    実施許可の返信は、リクエスト者のemailにお願いします。</br>
+    </br>
+    果樹区分：<%= @request.tree.tree_type %></br>
+    果樹名・施設名：<%= @request.tree.tree_name %></br>
+    所在地：<%= @request.tree.tree_address2 %></br>
+    </br>
+    リクエスト者：<%= @request.user.name %></br>
+    email：<%= @request.user.email %></br>
+    </br>
+    コメント：</br>
+    <%= @request.comment %>
+    </br>
+  </li>
+  <li style="border-bottom: dotted 0.5px;list-style: none">
+    Town Fruits</br>
+    街や庭の果樹の収獲イベントによる地域コミュニティの活性化を目的とするサイトです。</br>
+    https://morning-castle-97264.herokuapp.com/</br>
+  </li>
+  </br>
+  <%= link_to '街の果樹の検索ページに戻る', "/trees", method: :get %>
+</div>

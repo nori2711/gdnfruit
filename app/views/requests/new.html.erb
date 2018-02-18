@@ -2,6 +2,7 @@
   <%= form_for [@tree, @request] do |r| %>
     <div class="actions">
       <%= r.submit "リクエストメールを送る", class: "btn btn--block" do %>
+      <%= link_to 'リクエスト', "/requests/show/#{request.id}", method: :get %>
       <% end %>
     </div>
     <div style="margin: 8px 0px">

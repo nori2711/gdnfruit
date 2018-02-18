@@ -610,3 +610,27 @@ header {
   margin: 0;
   text-align: center;
 }
+
+.dummy-mail {
+  color: #696969;
+  width: 33%;
+  min-width: 300px;
+  padding: 0 10px;
+  font-size: 13px;
+
+  a {
+    color: #6495ed;
+    border: 1px solid #6495ed;
+    border-radius: 4px;
+    padding: 2px 7px;
+    margin: 0 0 10px 0;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+  }
+
+  a:hover {
+    color: #fff;
+    background-color: #6495ed;
+  }
+}
