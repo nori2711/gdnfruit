@@ -14,7 +14,8 @@
 <div class="tab-menu">
   <ul>
     <li id="left" class="selected">庭木情報</li>
-    <li id="right">参加情報</li>
+    <li id="center">参加情報</li>
+    <li id="right">リクエスト</li>
   </ul>
 
   <div class="contents">
@@ -35,7 +36,7 @@
       <% end %>
     </div>
 
-    <div class="right">
+    <div class="center">
       <p><%= @nickname %>さんが参加する収穫一覧</p>
       <% @members.each do |member| %>
         <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
@@ -48,6 +49,16 @@
       <% @reviews.each do |review| %>
         <p style="padding: 0;margin: 0;"><i class="star" data-score="<%= review.rate %>"></i> <%= formatted_datetime(review.harvest.harvest_day) %> <%= review.harvest.fruit.fruit_name %></p>
         <p style="border-bottom: dotted 0.5px;padding: 0;margin: 0 0 5px 0;"><%= review.review %></p>
+      <% end %>
+    </div>
+
+    <div class="right">
+      <p><%= @nickname %>さんのリクエスト一覧</p>
+      <% @request.each do |request| %>
+        <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
+          <%= link_to '詳細', "/requests/#{request.id}", method: :get %>
+           <%= formatted_datetime(request.created_at) %> <%= request.tree.tree_type %> <%= request.tree.tree_name %> <%= request.tree.tree_address2 %>
+        </p>
       <% end %>
     </div>
   </div>

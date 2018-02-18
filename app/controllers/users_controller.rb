@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @reviews = current_user.reviews
     # @user = User.find(current_user.id)
     @address = Postal.new(current_user.address1).search
+    @request = current_user.requests.order("id DESC")
   end
 
   private
