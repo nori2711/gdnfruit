@@ -19,7 +19,7 @@
     <h2>収獲イベント 新着</h2>
     <ul>
       <% @harvests.limit(3).each do |harvest| %>
-        <li><%= image_tag harvest.fruit.photo(:medium), alt: 'No image',size: '270' %></br>
+        <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '270' %></br>
           <%= harvest.fruit.fruit_name %></br>
           <%= harvest.fruit.fruit_address2 %></br>
           <%= harvest.fruit.fruit_detail %></br>
@@ -34,7 +34,7 @@
   <h2>収獲イベント一覧</h2>
   <ul>
     <% @harvests.each do |harvest| %>
-      <li><%= image_tag harvest.fruit.photo(:thumb), alt: 'No image' %></br>
+      <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '100' %></br>
         <%= harvest.fruit.fruit_name %></br>
         <%= harvest.fruit.fruit_address2 %></br>
         <%= formatted_datetime(harvest.harvest_day) %></br>
