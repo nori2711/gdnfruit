@@ -7,12 +7,17 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new(request_params)
     if @request.save
-      NotificationMailer.send_confirm_to_request(@request).deliver
+      # NotificationMailer.send_confirm_to_request(@request).deliver
+      redirect_to "/requests/#{@request.id}"
       flash[:notice] = "街の果樹の収穫イベントリクエストメールを送信しました。"
-      redirect_to "/trees"
+      # redirect_to "/trees"
     else
       render "new"
     end
+  end
+
+  def show
+    @request = Request.find(params[:id])
   end
 
   private
