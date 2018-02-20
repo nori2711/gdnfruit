@@ -1,5 +1,5 @@
 <div class="harvest-li">
-  <h2>収獲イベントの検索</h2>
+  <h2>収獲祭の検索</h2>
 
   <%= search_form_for @search do |f| %>
     <div>
@@ -15,7 +15,7 @@
         <%= harvest.fruit.fruit_name %></br>
         <%= harvest.fruit.fruit_address2 %></br>
         <%= formatted_datetime(harvest.harvest_day) %></br>
-        <%= link_to '収獲詳細', "/harvests/#{harvest.id}", method: :get %></li>
+        <%= link_to '収獲祭 詳細', "/harvests/#{harvest.id}", method: :get %></li>
     <% end %>
   </ul>
 </div>

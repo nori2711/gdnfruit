@@ -1,22 +1,22 @@
 <div class="lp">
   <div class="lp-outline">
-    <h2>「Town Fruits」は簡単に果樹の収獲イベントの開催や参加ができます</h2>
+    <h2>「街の収穫祭」Harvest Fes.は簡単に果樹の収獲祭の開催や参加ができます</h2>
     <p>
       <%= image_tag 'icon-tree.png',size: '170' %></br>
       <b class="owner">果樹の持ち主</b></br>
-    「今年も庭の果樹の収穫しなきゃ」</br><%= link_to '収獲イベントの開催はマイページから', "/users/show", method: :get %></p>
+    「今年も庭の果樹の収穫しなきゃ」</br><%= link_to '収獲祭の開催はマイページから', "/users/show", method: :get %></p>
     <p>
       <%= image_tag 'icon-harvest.png',size: '170' %></br>
-      <b class="guest">収獲したい方</b></br>「どこかの果樹の収獲したいな」</br><%= link_to '収穫イベントの検索はこちら', "/harvests", method: :get %>
+      <b class="guest">収獲したい方</b></br>「どこかの果樹の収獲したいな」</br><%= link_to '収穫祭の検索はこちら', "/harvests", method: :get %>
     </p>
     <p>
       <%= image_tag 'icon-trees.png',size: '170' %></br>
-      <b class="owner">街の果樹が気になる方</b></br>「あの果樹でみんなを集めたいな」</br><%= link_to '街の果樹の検索はこちら', "/trees", method: :get %>
+      <b class="owner">街の果樹が気になる方</b></br>「あの果樹で収穫祭したいな」</br><%= link_to '街の果樹の検索はこちら', "/trees", method: :get %>
     </p>
   </div>
 
   <div class="lp-fruit">
-    <h2>収獲イベント 新着</h2>
+    <h2>収獲祭 新着</h2>
     <ul>
       <% @harvests.limit(3).each do |harvest| %>
         <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '270' %></br>
@@ -24,21 +24,21 @@
           <%= harvest.fruit.fruit_address2 %></br>
           <%= harvest.fruit.fruit_detail %></br>
           <%= formatted_datetime(harvest.harvest_day) %></br>
-          <%= link_to '収穫イベント詳細', "/harvests/#{harvest.id}", method: :get %></li>
+          <%= link_to '収穫祭 詳細', "/harvests/#{harvest.id}", method: :get %></li>
       <% end %>
     </ul>
   </div>
 </div>
 
 <div class="harvest-li">
-  <h2>収獲イベント一覧</h2>
+  <h2>収獲祭 一覧</h2>
   <ul>
     <% @harvests.each do |harvest| %>
       <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '100' %></br>
         <%= harvest.fruit.fruit_name %></br>
         <%= harvest.fruit.fruit_address2 %></br>
         <%= formatted_datetime(harvest.harvest_day) %></br>
-        <%= link_to '収獲詳細', "/harvests/#{harvest.id}", method: :get %></li>
+        <%= link_to '収獲祭 詳細', "/harvests/#{harvest.id}", method: :get %></li>
     <% end %>
   </ul>
 </div>

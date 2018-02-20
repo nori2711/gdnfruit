@@ -20,15 +20,15 @@
 
   <div class="contents">
     <div class="left">
-      <p><%= @nickname %>さんの庭の果実一覧<a class="fruit_new" href="/fruits/new">果実登録</a></p>
+      <p><%= @nickname %>さんの庭の果樹一覧<a class="fruit_new" href="/fruits/new">果樹登録</a></p>
       <% @fruits.each do |fruit| %>
         <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
-          <%= link_to '詳細', "/fruits/#{fruit.id}", method: :get %> <%= link_to '収獲登録', "/fruits/#{fruit.id}/harvests/new", method: :get %> <%= fruit.fruit_name %>
+          <%= link_to '詳細', "/fruits/#{fruit.id}", method: :get %> <%= link_to '収獲祭登録', "/fruits/#{fruit.id}/harvests/new", method: :get %> <%= fruit.fruit_name %>
         </p>
       <% end %>
       </br>
 
-      <p><%= @nickname %>さん主催の収穫イベント一覧</p>
+      <p><%= @nickname %>さん主催の収穫祭一覧</p>
       <% @harvests.each do |harvest| %>
         <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
           <%= link_to '参加者', "/harvests/#{harvest.id}/members", method: :get %> (<%= harvest.members_count %>/<%= harvest.people_number %>) <%= formatted_datetime(harvest.harvest_day) %> <%= harvest.fruit.fruit_name %>
@@ -37,7 +37,7 @@
     </div>
 
     <div class="center">
-      <p><%= @nickname %>さんが参加する収穫一覧</p>
+      <p><%= @nickname %>さんが参加する収穫祭一覧</p>
       <% @members.each do |member| %>
         <p style="border-bottom: dotted 0.5px;padding: 5px 0;margin: 0;">
           <%= link_to '投稿', "/harvests/#{member.harvest.id}/reviews/new", method: :get %> <%= formatted_datetime(member.harvest.harvest_day) %> <%= member.fruit.fruit_name %>
