@@ -1,7 +1,7 @@
 
 <div class="harvest-d">
-  <h3>収穫イベントの詳細</h3>
-  <%= link_to '収穫に参加する', "/harvests/#{@harvest.id}/members/new", method: :get %>
+  <h3>収穫祭の詳細</h3>
+  <%= link_to '収穫祭に参加する', "/harvests/#{@harvest.id}/members/new", method: :get %>
   </br>
   <%= image_tag @harvest.fruit.photo_file_name, alt: 'No image',size: '265' %>
 

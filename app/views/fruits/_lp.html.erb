@@ -1,44 +1,44 @@
 <div class="lp">
   <div class="lp-outline">
-    <h2>「Town Fruits」は簡単に街や庭の果樹の収獲イベントの開催や参加ができます</h2>
-    <h2><b>まずはユーザー登録</b> → <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+    <h2>「街の収穫祭」Harvest Fes.は簡単に街や庭の果樹の収獲祭の開催や参加ができます</h2>
+    <h2><b>まずはユーザー登録</b><%= link_to "新規登録", new_user_registration_path, class: 'post' %>
     </h2>
     <p>
       <%= image_tag 'icon-tree.png',size: '170' %></br>
       <b class="owner">庭の果樹の持ち主</b></br>「今年も庭の果樹の収穫しなきゃ」</br>
-      収獲イベントを開催できます
+      収獲祭を開催できます
     </p>
     <p>
       <%= image_tag 'icon-harvest.png',size: '170' %></br>
-      <b class="guest">収獲したい方</b></br>「どこかの果樹の収獲したいな」</br>収獲イベントに参加できます
+      <b class="guest">収獲したい方</b></br>「どこかの果樹の収獲したいな」</br>収獲祭に参加できます
     </p>
     <p>
       <%= image_tag 'icon-trees.png',size: '170' %></br>
-      <b class="owner">街の果樹が気になる方</b></br>「あの果樹でみんなを集めたいな」</br>
+      <b class="owner">街の果樹が気になる方</b></br>「あの果樹で収穫祭したいな」</br>
       市区町村にリクエストできます
     </p>
   </div>
 
   <div class="lp-user">
-    <h2><b class="owner">庭の果樹の持ち主</b>は収獲イベントを開催できます</h2>
+    <h2><b class="owner">庭の果樹の持ち主</b>は収獲祭を開催できます</h2>
     <p>まず、マイページにて果樹を登録します</p>
-    <p>次に、果樹の収獲イベントを登録します</p>
-    <p>参加状況を確認し収獲イベントを開催します</p>
-    <h2><b class="owner">街の果樹が気になる方</b>は収獲イベントをリクエストできます</h2>
-    <p>まず、マイページにて果樹を検索して収穫イベントをリクエストします</p>
-    <p>開催OK後に果樹の収獲イベントを登録します</p>
-    <p style="padding: 5px 10px 20px 10px">参加状況を確認し収獲イベントを開催します</p>
+    <p>次に、果樹の収獲祭を登録します</p>
+    <p>参加状況を確認し収獲祭を開催します</p>
+    <h2><b class="owner">街の果樹が気になる方</b>は収獲祭の開催をリクエストできます</h2>
+    <p>まず、マイページにて果樹を検索して収穫祭をリクエストします</p>
+    <p>開催OK後に果樹の収獲祭を登録します</p>
+    <p style="padding: 5px 10px 20px 10px">参加状況を確認し収獲祭を開催します</p>
   </div>
 
   <div class="lp-harvest">
-    <h2><b class="guest">収獲したい方</b>は収獲イベントに参加できます</h2>
-    <p>トップページで収穫イベントを検索します</p>
-    <p>収穫したい果樹の収獲イベントに参加登録します</p>
+    <h2><b class="guest">収獲したい方</b>は収獲祭に参加できます</h2>
+    <p>検索ページで収穫祭を検索します</p>
+    <p>収穫したい果樹の収獲祭に参加登録します</p>
     <p>収獲日に現地に集合して収獲します</p>
   </div>
 
   <div class="lp-fruit">
-    <h2>収獲イベントの紹介</h2>
+    <h2>収獲祭の紹介</h2>
     <ul>
       <% @harvests.limit(9).each do |harvest| %>
         <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '270' %></br>
