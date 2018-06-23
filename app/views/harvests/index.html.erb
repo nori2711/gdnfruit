@@ -1,4 +1,9 @@
 <div class="harvest-li">
+  <h2>現在地周辺の収穫祭</h2>
+  <div class="currentLocation"><%= button_tag "現在地から探す", type: "button" %></div>
+
+  <div id="map" style="width: 90%; height: 400px; background-color: grey; margin: 5px auto 20px auto;"></div>
+
   <h2>収獲祭の検索</h2>
 
   <%= search_form_for @search do |f| %>
@@ -19,3 +24,101 @@
     <% end %>
   </ul>
 </div>
+
+<script type="text/javascript">
+  @getCurrentLocation: ->
+    $('.currentLocation').on 'click', ->
+      if navigator.geolocation
+        navigator.geolocation.getCurrentPosition(successGetPosition, failGetPosition, options)
+      else
+        message = "ブラウザが現在地検索に対応していません"
+        Alert.set('warning', ,message)
+
+  successGetPosition = (position) ->
+    window.location.href = "/harverts/seaches?latitude=#{position.coords.latitude}&longitude=#{position.coords.longitude}"
+
+  options = enableHighAccuracy: true
+
+  failGetPosition = (error) ->
+    switch error.code
+      when 1
+        message = '位置情報の提供を許可してください'
+      when 2
+        message = '位置情報の取得に失敗しました'
+    Alert.set('warning', message)
+</script>
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 13,
+    });
+
+    setMarkers(map);
+
+    setInfoWindows(map);
+
+    var infoWindow = new google.maps.InfoWindow({
+      map: map
+    });
+
+    // HTML5にて現在位置を取得
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('現在地');
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+  }
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesnt support geolocation.');
+  }
+
+  var fruits_lat = <%= @fruit_lat %>;
+  var fruits_lng = <%= @fruit_lng %>;
+  var fruits_name = <%= raw @fruit_name %>;
+
+  // マーカー情報の作成
+  function setMarkers(map) {
+    for (var i = 0; i < fruits_lat.length; i++) {
+      var fruit_lat = fruits_lat[i];
+      var fruit_lng = fruits_lng[i];
+      var fruit_name = fruits_name[i];
+      var marker = new google.maps.Marker({
+        position: {lat: fruit_lat, lng: fruit_lng},
+        map: map,
+        label: fruit_name,
+      });
+    }
+  }
+
+  function setInfoWindows(map) {
+    for (var i = 0; i < fruits_lat.length; i++) {
+      var fruit_name = fruits_name[i];
+      var infowindow = new google.maps.InfoWindow({
+        content: fruit_name
+      });
+    }
+  }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= @apikey %>&callback=initMap">
+</script>
+
+
+
+

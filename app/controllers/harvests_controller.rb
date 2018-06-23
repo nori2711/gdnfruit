@@ -1,5 +1,18 @@
 class HarvestsController < ApplicationController
   def index
+    # 収穫情報を地図上に表示
+    @harvests = Harvest.where("fruit_id >= ?", 32) #位置情報有りのレコードを抽出
+    @fruit_lat = @harvests.map{ |har|
+      har.fruit.latitude
+    } #マーカー用の緯度情報の配列作成
+    @fruit_lng = @harvests.map{ |har|
+      har.fruit.longitude
+    } #マーカー用の経度情報の配列作成
+    @fruit_name = @harvests.map{ |har|
+      har.fruit.fruit_name
+    } #マーカー用の果実名の配列作成
+    @apikey = ENV["GOOGLEMAP_APIKEY"]
+
     @search = Harvest.ransack(params[:q])
     @result = @search.result.order("id DESC")
   end
@@ -22,6 +35,9 @@ class HarvestsController < ApplicationController
   def show
     @harvest = Harvest.find(params[:id])
     @address = Postal.new(@harvest.fruit.fruit_address1).search
+  end
+
+  def seach
   end
 
   private

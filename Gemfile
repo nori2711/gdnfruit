@@ -55,3 +55,5 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem "gmaps4rails"
+gem "geocoder"
