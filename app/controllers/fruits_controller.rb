@@ -23,6 +23,13 @@ class FruitsController < ApplicationController
     @address = Postal.new(@fruit.fruit_address1).search
   end
 
+  def destroy
+    @fruit.destroy
+    respond_to do |format|
+      format.html { redirect_to fruits_url, notice: 'Fruit was successfully destroyed.' }
+    end
+  end
+
   private
   def fruit_params
     params.require(:fruit).permit(:fruit_name, :fruit_address1, :fruit_address2, :fruit_address3, :fruit_detail, :harvest_season, :harvest_people, :photo).merge(user_id: current_user.id)

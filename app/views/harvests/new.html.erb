@@ -18,7 +18,7 @@
   <% end %>
 </br>
   <div class="harvest-d" style="font-size: 13px;">
-    <%= image_tag @fruit.photo_file_name, alt: 'No image',size: '100' %>
+    <%= image_tag @fruit.photo.url, alt: 'No image',size: '100' %>
     <table style="display: inline-block;">
       <tr><th>果実名</th><td><%= @fruit.fruit_name %></td></tr>
       <tr><th>収獲時期</th><td><%= @fruit.harvest_season %></td></tr>

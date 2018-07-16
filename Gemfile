@@ -48,7 +48,6 @@ end
 
 gem 'pry-rails'
 gem 'devise'
-gem 'paperclip'
 gem 'ransack'
 
 group :production do
@@ -57,3 +56,7 @@ end
 
 gem "gmaps4rails"
 gem "geocoder"
+
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick'
