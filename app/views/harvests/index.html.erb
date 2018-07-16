@@ -16,7 +16,7 @@
 
   <ul>
     <% @result.each do |harvest| %>
-      <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image', size: '100' %></br>
+      <li><%= image_tag harvest.fruit.photo.url, alt: 'No image', size: '100' %></br>
         <%= harvest.fruit.fruit_name %></br>
         <%= harvest.fruit.fruit_address2 %></br>
         <%= formatted_datetime(harvest.harvest_day) %></br>

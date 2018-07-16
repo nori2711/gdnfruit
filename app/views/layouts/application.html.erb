@@ -20,7 +20,7 @@
       <% if user_signed_in? %>
         <div class="user_nav">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          <a class="post" href="/users/show">マイページ</a>
+          <%= link_to 'マイページ', "/users/show", method: :get %>
         </div>
       <% else %>
         <div class="user_nav">

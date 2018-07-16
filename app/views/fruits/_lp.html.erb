@@ -41,7 +41,7 @@
     <h2>収獲祭の紹介</h2>
     <ul>
       <% @harvests.limit(9).each do |harvest| %>
-        <li><%= image_tag harvest.fruit.photo_file_name, alt: 'No image',size: '270' %></br>
+        <li><%= image_tag harvest.fruit.photo.url, alt: 'No image',size: '270' %></br>
           <%= harvest.fruit.fruit_name %></br>
           <%= harvest.fruit.fruit_address2 %></br>
           <%= harvest.fruit.fruit_detail %></br>

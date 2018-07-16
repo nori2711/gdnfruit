@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404105804) do
+ActiveRecord::Schema.define(version: 20180715064127) do
 
   create_table "fruits", force: :cascade do |t|
     t.integer  "user_id",            limit: 4
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20180404105804) do
     t.datetime "photo_updated_at"
     t.float    "latitude",           limit: 24
     t.float    "longitude",          limit: 24
+    t.string   "photo",              limit: 255
   end
 
   create_table "governments", force: :cascade do |t|

@@ -1,6 +1,6 @@
 <div class="harvest-d">
   <h3 style="margin: 10px 0;">果樹の登録内容</h3>
-  <%= image_tag @fruit.photo_file_name, alt: 'No image', size: '150' %>
+  <%= image_tag @fruit.photo.url, alt: 'No image' %>
   <table>
     <tr><th>果実名</th><td><%= @fruit.fruit_name %></td></tr>
     <tr><th>郵便番号</th><td><%= @fruit.fruit_address1 %>(<%= @address %>)</td></tr>
