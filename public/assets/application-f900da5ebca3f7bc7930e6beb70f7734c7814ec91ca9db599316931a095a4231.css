@@ -1,0 +1,875 @@
+/* line 12, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 22, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header {
+  height: 45px;
+  background: #808080;
+  padding: 0 0 0 10px;
+  display: flex;
+  align-items: center;
+}
+/* line 29, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header h1 {
+  font-size: 30px;
+  color: #fff;
+  width: 40%;
+  display: inline-block;
+}
+/* line 36, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header h2 {
+  font-size: 20px;
+  color: #fff;
+  width: 35%;
+  min-width: 120px;
+  line-height: 21px;
+  display: inline-block;
+}
+/* line 45, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header h3 {
+  font-size: 18px;
+  color: #fff;
+  line-height: 21px;
+}
+/* line 57, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header .user_nav {
+  margin-left: auto;
+}
+/* line 59, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header .user_nav a {
+  font-size: 14px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 3px 3px;
+}
+@media (max-width: 768px) {
+  /* line 67, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+  header .user_nav a {
+    font-size: 12px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 5px 3px;
+  }
+}
+/* line 75, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header .user_nav a:hover {
+  background-color: #fff;
+}
+/* line 80, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header a {
+  margin-right: 10px;
+  color: #fff;
+  line-height: 16px;
+}
+/* line 86, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+header a:hover {
+  color: #79A9C2;
+}
+
+/* line 91, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index {
+  position: relative;
+  text-align: center;
+}
+/* line 97, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .bs-img1 {
+  background-image: url(/assets/kinkan.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 106, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .bs-img2 {
+  background-image: url(/assets/gumi.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 113, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .bs-img3 {
+  background-image: url(/assets/biwa.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 120, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .bs-img4 {
+  background-image: url(/assets/ume.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* line 127, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index h1 {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  font-size: 30px;
+  color: #fff;
+  width: 100%;
+  margin: auto;
+}
+/* line 138, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .title1 {
+  position: absolute;
+  top: 68px;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  color: #fff;
+  width: 90%;
+  margin: auto;
+  padding: 0 20px;
+}
+/* line 151, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.header-index .title2 {
+  position: absolute;
+  top: 128px;
+  width: 75%;
+  font-size: 18px;
+  color: #fff;
+  background-color: rgba(169, 169, 169, 0.4);
+  margin: auto;
+  top: 120;
+  bottom: 30;
+  left: 0;
+  right: 0;
+  padding: 3px 20px;
+}
+@media (max-width: 768px) {
+  /* line 168, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+  .header-index .title2 {
+    position: absolute;
+    top: 128px;
+    width: 75%;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgba(169, 169, 169, 0.4);
+    margin: 10px auto;
+    top: 120;
+    bottom: 30;
+    left: 0;
+    right: 0;
+    padding: 3px 20px;
+  }
+}
+
+/* line 185, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.fruit_table {
+  width: 95%;
+  min-width: 300px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.28);
+  margin: 10px 10px;
+}
+
+/* line 193, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.fruit_table th, .fruit_table td {
+  padding: 5px 8px;
+}
+/* line 196, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.fruit_table th {
+  background: #5D99FF;
+  color: #fff;
+}
+/* line 200, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.fruit_table tbody tr:nth-child(even) {
+  background: #D9E5FF;
+}
+
+/* line 205, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.user_table {
+  width: 95%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.28);
+  margin: 10px 10px;
+}
+
+/* line 211, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.user_table {
+  color: #696969;
+}
+/* line 214, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.user_table th, .user_table td {
+  padding: 4px 4px;
+}
+/* line 217, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.user_table th {
+  background: #5D99FF;
+  color: #fff;
+  width: 100px;
+}
+/* line 223, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.user_table tbody tr:nth-child(even) {
+  background: #D9E5FF;
+}
+
+/* line 228, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.tab-menu {
+  color: #696969;
+}
+
+/* line 233, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.left a, .center a, .right a {
+  font-size: 14px;
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 3px 1px;
+  margin: 0px;
+}
+/* line 242, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.left a:hover, .center a:hover, .right a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 248, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp {
+  text-align: center;
+  background-color: #f5f5f5;
+}
+/* line 252, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp h2 {
+  font-size: 20px;
+  margin: 0;
+  padding: 15px 0 10px 0;
+}
+/* line 258, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp p {
+  font-size: 17px;
+  margin: 0;
+  padding: 0 0 13px 0;
+}
+/* line 264, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .owner {
+  color: #fff;
+  padding: 2px 4px;
+  background-color: #3cb371;
+}
+/* line 270, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .guest {
+  color: #fff;
+  padding: 2px 4px;
+  background-color: #ffa500;
+}
+/* line 276, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-outline {
+  padding: 0 5px 30px 0;
+  color: #696969;
+  vertical-align: top;
+}
+/* line 281, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-outline a {
+  font-size: 14px;
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin: 10px;
+}
+/* line 290, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-outline a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+/* line 295, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-outline p {
+  margin: 20px 5px 5px 0px;
+  padding: 0 0 4px 0;
+  width: 290px;
+  height: 250px;
+  display: inline-block;
+}
+/* line 305, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-user {
+  padding: 40px 10px;
+  background-image: url(/assets/komorebi.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+/* line 313, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-user h2 {
+  background-color: rgba(169, 169, 169, 0.4);
+  width: 90%;
+  padding: 20px 10px 10px 10px;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  /* line 321, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+  .lp .lp-user h2 {
+    text-align: left;
+  }
+}
+/* line 326, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-user p {
+  background-color: rgba(169, 169, 169, 0.4);
+  width: 90%;
+  padding: 3px 10px;
+  line-height: 120%;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  /* line 335, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+  .lp .lp-user p {
+    text-align: left;
+  }
+}
+/* line 341, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-harvest {
+  padding: 40px 10px;
+  background-image: url(/assets/mikaku.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+/* line 349, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-harvest h2, .lp .lp-harvest p {
+  background-color: rgba(169, 169, 169, 0.4);
+  width: 95%;
+  display: inline-block;
+}
+@media (max-width: 768px) {
+  /* line 355, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+  .lp .lp-harvest h2, .lp .lp-harvest p {
+    text-align: left;
+  }
+}
+/* line 361, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-fruit {
+  background-color: #dcdcdc;
+  color: #696969;
+}
+/* line 365, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-fruit h2 {
+  margin: 0px 0px 0px 0px;
+  padding: 30px 0 0 0;
+}
+/* line 370, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-fruit li {
+  list-style: none;
+  margin: 5px 30px 5px -20px;
+  padding: 0 0 10px 0;
+  width: 270px;
+  height: 100%;
+  background-color: #fff;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* line 383, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-fruit a {
+  font-size: 14px;
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin: 10px;
+}
+/* line 392, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.lp .lp-fruit a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 399, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li {
+  text-align: center;
+  font-size: 9px;
+  color: #696969;
+}
+/* line 404, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li h2 {
+  font-size: 20px;
+  margin: 0;
+  display: inline-block;
+}
+/* line 410, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li li {
+  margin: 4px 30px 4px -27px;
+  padding: 0 0 4px 0;
+  width: 100px;
+  height: 100%;
+  background-color: #fff;
+  display: inline-block;
+}
+/* line 419, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li a {
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin: 10px;
+}
+/* line 427, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+/* line 432, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li .btn {
+  color: #6495ed;
+  background-color: #f5f5f5;
+  font-size: 15px;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 30px;
+  margin: 0px;
+}
+/* line 442, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-li .btn:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 448, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d {
+  margin: 0 10px;
+  width: 95%;
+}
+/* line 452, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d table {
+  background: #d3d3d3;
+}
+/* line 455, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d table th, .harvest-d table td {
+  padding: 5px 10px;
+  color: #696969;
+}
+/* line 460, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d table th {
+  background: #f5f5f5;
+  min-width: 70px;
+}
+/* line 465, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d table td {
+  background: #fff;
+}
+/* line 470, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d a {
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  width: 250px;
+  text-align: center;
+}
+/* line 481, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 487, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-review {
+  color: #696969;
+}
+/* line 490, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-review h3 {
+  margin: 13px 8px 0 8px;
+}
+/* line 494, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-review ul {
+  margin: 0 10px;
+  padding: 0;
+}
+
+/* line 500, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-member {
+  margin: 20px;
+}
+/* line 503, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-member table {
+  background: #d3d3d3;
+  font-size: 12px;
+}
+/* line 507, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-member table th, .harvest-d-member table td {
+  padding: 5px 15px;
+  color: #696969;
+}
+/* line 512, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-member table th {
+  background: #f5f5f5;
+}
+/* line 516, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.harvest-d-member table td {
+  background: #fff;
+}
+
+/* line 523, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.review-new .btn {
+  color: #6495ed;
+  background-color: #f5f5f5;
+  font-size: 15px;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 15px;
+  margin: 0px;
+}
+/* line 533, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.review-new .btn:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 539, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login {
+  color: #fff;
+  margin: 0;
+  padding: 30px;
+  background-image: url(/assets/komorebi.jpg);
+  text-align: center;
+}
+/* line 547, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login .actions .btn {
+  color: #6495ed;
+  background-color: #f5f5f5;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin: 0 0 25px 0;
+  width: 270px;
+  font-size: 15px;
+  text-align: center;
+}
+/* line 559, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login .actions .btn:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 566, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login-new {
+  background-image: url(/assets/fruits.jpg);
+  background-size: cover;
+}
+
+/* line 571, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.member-join {
+  margin: 0;
+  padding: 30px;
+  text-align: center;
+}
+/* line 577, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.member-join .actions .btn {
+  color: #6495ed;
+  background-color: #f5f5f5;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 5px 7px;
+  margin: 0 0 25px 0;
+  width: 270px;
+  font-size: 15px;
+  text-align: center;
+}
+/* line 589, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.member-join .actions .btn:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+
+/* line 596, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login-fruit {
+  background-color: #8fbc8f;
+  background-image: none;
+}
+
+/* line 601, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.contents-login-harvest {
+  background-color: #ffa500;
+  background-image: none;
+}
+
+/* line 606, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.notice {
+  color: #fff;
+  background-color: #4169e1;
+  padding: 2px 10px;
+  margin: 0;
+  text-align: center;
+}
+
+/* line 614, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.dummy-mail {
+  color: #696969;
+  width: 33%;
+  min-width: 300px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+/* line 621, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.dummy-mail a {
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  width: 200px;
+  text-align: center;
+}
+/* line 632, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/fruits.scss */
+.dummy-mail a:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+/** VARIABLES
+===================================*/
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+  position: relative;
+  margin-bottom: 60px;
+  padding: 0;
+  *zoom: 1;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.bxslider {
+  margin: 0;
+  padding: 0;
+}
+ul.bxslider {
+  list-style: none;
+}
+.bx-viewport {
+  /*fix other elements on the page moving (on Chrome)*/
+  -webkit-transform: translatez(0);
+}
+/** THEME
+===================================*/
+.bx-wrapper {
+  -moz-box-shadow: 0 0 5px #ccc;
+  -webkit-box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #ccc;
+  border: 5px solid #fff;
+  background: #fff;
+}
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+  position: absolute;
+  bottom: -30px;
+  width: 100%;
+}
+/* LOADER */
+.bx-wrapper .bx-loading {
+  min-height: 50px;
+  background: url('images/bx_loader.gif') center center no-repeat #ffffff;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+}
+/* PAGER */
+.bx-wrapper .bx-pager {
+  text-align: center;
+  font-size: .85em;
+  font-family: Arial;
+  font-weight: bold;
+  color: #666;
+  padding-top: 20px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #666;
+  text-indent: -9999px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  outline: 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: #000;
+}
+.bx-wrapper .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+  display: inline-block;
+  vertical-align: bottom;
+  *zoom: 1;
+  *display: inline;
+}
+.bx-wrapper .bx-pager-item {
+  font-size: 0;
+  line-height: 0;
+}
+/* DIRECTION CONTROLS (NEXT / PREV) */
+.bx-wrapper .bx-prev {
+  left: 10px;
+  background: url('images/controls.png') no-repeat 0 -32px;
+}
+.bx-wrapper .bx-prev:hover,
+.bx-wrapper .bx-prev:focus {
+  background-position: 0 0;
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+  background: url('images/controls.png') no-repeat -43px -32px;
+}
+.bx-wrapper .bx-next:hover,
+.bx-wrapper .bx-next:focus {
+  background-position: -43px 0;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+/* AUTO CONTROLS (START / STOP) */
+.bx-wrapper .bx-controls-auto {
+  text-align: center;
+}
+.bx-wrapper .bx-controls-auto .bx-start {
+  display: block;
+  text-indent: -9999px;
+  width: 10px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -11px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active,
+.bx-wrapper .bx-controls-auto .bx-start:focus {
+  background-position: -86px 0;
+}
+.bx-wrapper .bx-controls-auto .bx-stop {
+  display: block;
+  text-indent: -9999px;
+  width: 9px;
+  height: 11px;
+  outline: 0;
+  background: url('images/controls.png') -86px -44px no-repeat;
+  margin: 0 3px;
+}
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active,
+.bx-wrapper .bx-controls-auto .bx-stop:focus {
+  background-position: -86px -33px;
+}
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: left;
+  width: 80%;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+  right: 0;
+  width: 35px;
+}
+/* IMAGE CAPTIONS */
+.bx-wrapper .bx-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #666;
+  background: rgba(80, 80, 80, 0.75);
+  width: 100%;
+}
+.bx-wrapper .bx-caption span {
+  color: #fff;
+  font-family: Arial;
+  display: block;
+  font-size: .85em;
+  padding: 10px;
+}
+/* line 1, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+body {
+  background-color: #f5f5f5;
+}
+
+/* line 5, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.tab-menu {
+  width: 95%;
+  margin-left: 10px;
+}
+/* line 9, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.tab-menu ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 50px;
+}
+/* line 15, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.tab-menu li {
+  display: inline-block;
+  width: 70px;
+  height: 22px;
+  padding: 10px 10px 5px;
+  cursor: pointer;
+  background-color: #C0C0C0;
+  border-top-right-radius: 10px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+/* line 27, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.tab-menu li.selected {
+  background-color: #fff;
+  color: #808080;
+}
+
+/* line 34, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.contents {
+  background-color: #fff;
+  padding: 10px;
+}
+/* line 38, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.contents .fruit_new {
+  font-size: 14px;
+  color: #6495ed;
+  border: 1px solid #6495ed;
+  border-radius: 4px;
+  padding: 3px 3px;
+  margin: 0 0 0 10px;
+}
+/* line 47, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.contents .fruit_new:hover {
+  color: #fff;
+  background-color: #6495ed;
+}
+/* line 52, /Users/maruyama/projects/gdnfruit/app/assets/stylesheets/users.scss */
+.contents .center, .contents .right {
+  display: none;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
