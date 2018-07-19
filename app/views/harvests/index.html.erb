@@ -1,11 +1,18 @@
 <div class="harvest-li">
   <h2>現在地周辺の収穫祭</h2>
-  <div class="currentLocation"><%= button_tag "現在地から探す", type: "button" %></div>
+  <!-- <div class="currentLocation"><%= button_tag "現在地から探す", type: "button" %></div> -->
 
-  <div id="map" style="width: 90%; height: 400px; background-color: grey; margin: 5px auto 20px auto;"></div>
+  <style>
+    #map {
+      width: 90%;
+      height: 400px;
+      background-color: grey;
+      margin: 5px auto 20px auto;
+    }
+  </style>
+  <div id="map"></div>
 
   <h2>収獲祭の検索</h2>
-
   <%= search_form_for @search do |f| %>
     <div>
       <%= f.text_field :fruit_fruit_address2_cont, class: "form-control", placeholder: "都道府県", style: 'width: 90px;height: 30px;font-size: 15px;padding: 0 10px;margin: 5px 1px' %>
@@ -118,7 +125,5 @@
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= @apikey %>&callback=initMap">
 </script>
-
-
 
 
