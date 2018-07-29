@@ -15,6 +15,11 @@ class HarvestsController < ApplicationController
 
     @search = Harvest.ransack(params[:q])
     @result = @search.result.order("id DESC")
+
+    # 現在地の周辺の果実の配列作成
+    latitude = params[:latitude]
+    longitude = params[:longitude]
+    @places = Fruit.near([latitude, longitude], 10, units: :km)
   end
 
   def new
@@ -35,9 +40,6 @@ class HarvestsController < ApplicationController
   def show
     @harvest = Harvest.find(params[:id])
     @address = Postal.new(@harvest.fruit.fruit_address1).search
-  end
-
-  def seach
   end
 
   private
