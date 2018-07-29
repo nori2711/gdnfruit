@@ -1,6 +1,14 @@
 <div class="harvest-li">
-  <h2>現在地周辺の収穫祭</h2>
-  <!-- <div class="currentLocation"><%= button_tag "現在地から探す", type: "button" %></div> -->
+  <h2>現在地周辺の収穫祭</h2></br>
+
+  <button onclick="getPosition();", style="font-size: 12px; color: #6495ed; border: 1px solid #6495ed; border-radius: 4px; padding: 3px 7px;">現在地周辺の収穫祭の写真を表示</button>
+  <ul>
+    <% @places.each do |fruit| %>
+      <li><%= image_tag fruit.photo.url, alt: 'No image', size: '100' %></br>
+        <%= fruit.fruit_name %></br>
+        <%= fruit.fruit_address2 %></br></li>
+    <% end %>
+  </ul>
 
   <style>
     #map {
@@ -12,7 +20,7 @@
   </style>
   <div id="map"></div>
 
-  <h2>収獲祭の検索</h2>
+  <h2>・・・収獲祭の検索・・・</h2>
   <%= search_form_for @search do |f| %>
     <div>
       <%= f.text_field :fruit_fruit_address2_cont, class: "form-control", placeholder: "都道府県", style: 'width: 90px;height: 30px;font-size: 15px;padding: 0 10px;margin: 5px 1px' %>
@@ -32,30 +40,8 @@
   </ul>
 </div>
 
-<script type="text/javascript">
-  @getCurrentLocation: ->
-    $('.currentLocation').on 'click', ->
-      if navigator.geolocation
-        navigator.geolocation.getCurrentPosition(successGetPosition, failGetPosition, options)
-      else
-        message = "ブラウザが現在地検索に対応していません"
-        Alert.set('warning', ,message)
-
-  successGetPosition = (position) ->
-    window.location.href = "/harverts/seaches?latitude=#{position.coords.latitude}&longitude=#{position.coords.longitude}"
-
-  options = enableHighAccuracy: true
-
-  failGetPosition = (error) ->
-    switch error.code
-      when 1
-        message = '位置情報の提供を許可してください'
-      when 2
-        message = '位置情報の取得に失敗しました'
-    Alert.set('warning', message)
-</script>
-
 <script>
+  // 現在地を中心とした地図を表示
   function initMap() {
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 13,
@@ -126,4 +112,14 @@
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= @apikey %>&callback=initMap">
 </script>
 
-
+<script>
+// 現在地を取得してページ更新
+function getPosition() {
+  navigator.geolocation.getCurrentPosition(successCall);
+  function successCall(position) {
+   var getlat = position.coords.latitude;
+   var getlng = position.coords.longitude;
+   window.location.href = '/harvests?latitude='+getlat+'&longitude='+getlng;
+  }
+}
+</script>

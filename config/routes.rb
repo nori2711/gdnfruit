@@ -20,5 +20,4 @@ Rails.application.routes.draw do
   resources :trees, only: :index do
     resources :requests, only: [:new, :create]
   end
-
 end
