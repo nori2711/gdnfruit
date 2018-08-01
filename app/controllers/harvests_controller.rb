@@ -1,7 +1,8 @@
 class HarvestsController < ApplicationController
   def index
     # 収穫情報を地図上に表示
-    @harvests = Harvest.where("fruit_id >= ?", 32) #位置情報有りのレコードを抽出
+    # fruitsテーブルをincludes、fruitsテーブルは親なので:fruitは単数、fruits:はテーブル名なので複数
+    @harvests = Harvest.includes(:fruit).where.not(fruits: {latitude: nil}) #位置情報ありのレコードを抽出
     @fruit_lat = @harvests.map{ |har|
       har.fruit.latitude
     } #マーカー用の緯度情報の配列作成
@@ -13,12 +14,14 @@ class HarvestsController < ApplicationController
     } #マーカー用の果実名の配列作成
     @apikey = ENV["GOOGLEMAP_APIKEY"]
 
+    # ransackにて収穫祭を検索
     @search = Harvest.ransack(params[:q])
     @result = @search.result.order("id DESC")
 
-    # 現在地の周辺の果実の配列作成
+    # indexから現在地情報を受け取り周辺の収穫祭を検索
     latitude = params[:latitude]
     longitude = params[:longitude]
+    # geocoderのnearメソッドで絞り込み
     @places = Fruit.near([latitude, longitude], 10, units: :km)
   end
 
